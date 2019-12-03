@@ -1,0 +1,73 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "nome": "americano",
+            "marca": "lanche",
+            "valor": 29,
+            "img": "americano.png"
+        },
+        {
+            "id": 2,
+            "nome": "x-burguer",
+            "marca": "lanche",
+            "valor": 13,
+            "img": "xburguer.jpg"
+        },
+        {
+            "id": 3,
+            "nome": "x-dog",
+            "marca": "lanche",
+            "valor": 15,
+            "img": "xdog.png"
+        },
+        {
+            "id": 4,
+            "nome": "x-salada",
+            "marca": "lanche",
+            "valor": 20,
+            "img": "xsalada.png"
+        },
+        {
+            "id": 5,
+            "nome": "x-tudo",
+            "marca": "lanche",
+            "valor": 35,
+            "img": "xtudo.png"
+        },{
+            "id": 6,
+            "nome": "americano",
+            "marca": "lanche",
+            "valor": 29,
+            "img": "americano.png"
+        },
+        {
+            "id": 7,
+            "nome": "x-burguer",
+            "marca": "lanche",
+            "valor": 13,
+            "img": "xburguer.jpg"
+        },
+        {
+            "id": 8,
+            "nome": "x-dog",
+            "marca": "lanche",
+            "valor": 15,
+            "img": "xdog.png"
+        },
+        {
+            "id": 9,
+            "nome": "x-salada",
+            "marca": "lanche",
+            "valor": 20,
+            "img": "xsalada.png"
+        },
+        {
+            "id": 10,
+            "nome": "x-tudo",
+            "marca": "lanche",
+            "valor": 35,
+            "img": "xtudo.png"
+        }
+    ]
+}

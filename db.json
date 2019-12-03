@@ -4,54 +4,63 @@
             "id": 1,
             "marca": 1,
             "nome": "Headset Gamer HyperX Cloud Stinger",
-            "img": "hyperheadphone.jpg"
+            "valor": 100,
+            "img": "hyperxheadphone.jpg"
         },
         {
             "id": 2,
             "marca": 1,
             "nome": "Teclado Mecânico Gamer HyperX Alloy",
-            "img": "hyperteclado.jpg"
+            "valor": 100,
+            "img": "hyperxteclado.jpg"
         },
         {
             "id": 3,
             "marca": 1,
             "nome": "Memória HyperX Fury, 8GB, 2400MHz, DDR4",
-            "img": "hyperram.jpg"
+            "valor": 100,
+            "img": "hyperxram.jpg"
         },
         {
             "id": 4,
             "marca": 1,
             "nome": "Mouse Gamer HyperX Pulsefire Core",
-            "img": "hypermouse.jpg"
+            "valor": 100,
+            "img": "hyperxmouse.jpg"
         },
         {
             "id": 5,
             "marca": 1,
             "nome": "Mousepad Gamer HyperX Fury S",
-            "img": "hypermousepad.jpg"
+            "valor": 100,
+            "img": "hyperxmousepad.jpg"
         },
         {
             "id": 6,
             "marca": 2,
             "nome": "Headset Gamer Razer Kraken Essential",
+            "valor": 100,
             "img": "razerheadphone.jpg"
         },
         {
             "id": 7,
             "marca": 2,
             "nome": "Teclado Mecânico Gamer Razer Blackwidow",
-            "img": "tecladorazer.jpg"
+            "valor": 100,
+            "img": "razerteclado.jpg"
         },
         {
             "id": 8,
             "marca": 2,
             "nome": "Combo Teclado e Mouse Gamer Razer Cynosa e DeathAdder",
+            "valor": 100,
             "img": "razercombo.jpg"
         },
         {
             "id": 9,
             "marca": 2,
             "nome": "Mousepad Gamer Razer Goliathus Terra",
+            "valor": 100,
             "img": "razermousepad.jpg"
         }
     ],

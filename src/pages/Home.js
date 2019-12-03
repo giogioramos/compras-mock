@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/Home.css';
-import BarraPesquisa from '../components/BarraPesquisa';
-import ListaProdutos from '../components/ListaProdutos';
-import BotaoCarrinho from '../components/BotaoCarrinho';
+import BarraPesquisa from '../components/barra/BarraPesquisa';
+import ListaProdutos from '../components/produto/ListaProdutos';
+import BotaoCarrinho from '../components/carrinho/BotaoCarrinho';
 
 export default function Home() {
     return (

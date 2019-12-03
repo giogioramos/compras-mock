@@ -26,7 +26,15 @@ export default class ListaProdutos extends Component {
         const {carregando, produtos} = this.state
         return (
             <div className="listaProdutos">
-                {!carregando ? produtos.map(produto => {return <Produto key={produto.id} nome={produto.nome} img={produto.img}/>}) : null}
+                <div className="quebra"></div>
+                {!carregando ? produtos.map(
+                    produto => {
+                        return <Produto 
+                            key={produto.id} nome={produto.nome} img={produto.img}
+                            marca={produto.marca} valor={produto.valor}
+                        />
+                    }):null
+                }
             </div>
         )
     }

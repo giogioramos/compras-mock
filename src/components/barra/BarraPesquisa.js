@@ -7,7 +7,7 @@ class BarraPesquisa extends Component {
                 <div className="input-borda">
                     <input placeholder="Busque um Produto..." type="search"/>
                 </div>
-                <img src={require('../assets/img/kabumarrow.png')} />
+                {/* <img src={require('../../assets/img/kabumarrow.png')} /> */}
             </header>
         )
     }    

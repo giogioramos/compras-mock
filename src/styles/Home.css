@@ -47,10 +47,15 @@
 
 .listaProdutos{
     position: absolute;
-    top: 56px;
+    top: 54px;
     overflow: auto;
     height: calc(100% - 58px);
     width: 100%;
+}
+
+.listaProdutos .quebra{
+    height: 10px;
+    display: block;
 }
 
 .botaoCarrinho {
@@ -97,4 +102,63 @@
     text-align: center;
     font-weight: bold;
     padding: 2px;
+}
+
+.produto {
+    width: 47%;
+    height: 30%;
+    float: left;
+    overflow: hidden;
+    background: white;
+    padding: 1%;
+    margin: 0.5%;
+}
+
+.produto .img{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 47%;
+    overflow: hidden;
+}
+
+.produto .marca-logo {
+    position: absolute;
+}
+
+.produto button {
+    border-radius: 4px;
+    background: linear-gradient(orange,#dc8800);
+    color: white;
+    border: 0;
+    font-weight: bold;
+    width: 99%;
+    height: 30px;
+}
+
+
+.produto .produto-footer {
+    height: 53%;
+}
+
+.produto .desc-container {
+    display: block;
+    max-lines: 2;
+}
+
+.produto label{
+    text-transform: capitalize;
+}
+
+.produto .valor{
+    text-align: right;
+    font-weight: bold;
+    display: block;
+    font-size: 1.3rem;
+}
+.produto .valor-antigo{
+    font-weight: bold;
+    text-decoration: line-through;
+    display: block;
 }
