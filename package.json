@@ -6,11 +6,13 @@
     "bootswatch": "^4.4.1",
     "json-server": "^0.15.1",
     "react": "^16.12.0",
+    "react-currency-format": "^1.0.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "sass": "^1.23.7"
   },
   "scripts": {
-    "start": "react-scripts start --port 4000",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

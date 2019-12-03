@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Produto from './Produto'
+import './Produto.scss'
 
-export default class ListaProdutos extends Component {
+export default class ListaProdutos extends React.Component {
    
     constructor(props){
         super(props)
         this.state = {
-            carregando: true,
             produtos: []
         }
     }
@@ -16,24 +16,50 @@ export default class ListaProdutos extends Component {
     }
 
     fetchData(){
-        fetch('http://localhost:3000/produtos')
-        .then(response => response.json())
-        .then(produtos => this.setState({produtos, carregando: false}))
-        .catch(errors => console.log(errors))
+        const URL_BASE = 'http://localhost:3000/'
+        let produtos = []
+        fetch(URL_BASE + 'marca')
+        .then(resposta => resposta.json())
+        .then(marcas => {
+            marcas.map( marca => {
+                fetch(URL_BASE + 'marca/'+marca.id+'/produto')
+                .then(resposta => resposta.json())
+                .then(produtos => 
+                    produtos.map(produto => {
+                        return {
+                            "id": produto.id,
+                            "marca_nome": marca.nome,
+                            "nome": produto.nome,
+                            "valor": produto.valor,
+                            "img": produto.img,
+                            "marca_img": marca.img
+                        }
+                    })
+                )
+                .then((res) => {
+                    produtos = produtos.concat(res)
+                    this.setState({produtos})
+                })
+            })
+        })
+        .catch(erros => console.log(erros))
     }
 
     render(){
-        const {carregando, produtos} = this.state
+        const {produtos} = this.state
         return (
             <div className="listaProdutos">
                 <div className="quebra"></div>
-                {!carregando ? produtos.map(
+                {produtos.map(
                     produto => {
-                        return <Produto 
-                            key={produto.id} nome={produto.nome} img={produto.img}
-                            marca={produto.marca} valor={produto.valor}
-                        />
-                    }):null
+                        return (
+                            <Produto 
+                                key={produto.id} nome={produto.nome} img={produto.img}
+                                marca_nome={produto.marca_nome} marca_img={produto.marca_img} 
+                                valor={produto.valor}
+                            />
+                        )
+                    })
                 }
             </div>
         )

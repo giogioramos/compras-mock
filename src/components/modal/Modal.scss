@@ -1,0 +1,68 @@
+.modal{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    font-family: monospace;
+}
+
+.modal-bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #000000c2;
+    z-index: 0;
+}
+
+.modal-cabecalho{
+    height: 45px;
+    width: 100%;
+    background: linear-gradient(#da5800, #f8aa32 67%);
+    position: relative;
+}
+
+.modal-cabecalho .titulo{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-indent: 20px;
+    font-size: 1.5rem;
+    text-shadow: 1px 2px 3px #5d5d5d;
+    width: calc(100% - 50px);
+    height: 100%;
+    padding-top: 7px;
+    overflow: hidden;
+}
+
+.modal-cabecalho button{
+    background: none;
+    border: 0;
+    outline: 0;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    text-align: center;
+    height: 100%;
+    text-shadow: 1px 2px 3px #5d5d5d;
+}
+
+.modal-pai {
+    position: relative;
+    background: white;
+    z-index: 1;
+    width: 90%;
+    max-height: 90%;
+    height: auto;
+    margin-left: 5%;
+    margin-top: 5%;
+    overflow: hidden;
+}
+
+.modal-conteudo {
+    padding: 3%;
+    overflow: auto;
+}

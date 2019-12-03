@@ -47,9 +47,9 @@
 
 .listaProdutos{
     position: absolute;
-    top: 54px;
+    top: 58px;
     overflow: auto;
-    height: calc(100% - 58px);
+    height: calc(100% - 60px);
     width: 100%;
 }
 
@@ -64,7 +64,6 @@
     bottom: 10px;
     height: 50px;
     width: 50px;
-    transition: all 0.05s;
 }
 
 .botaoCarrinho button {
@@ -77,6 +76,7 @@
     border: 0;
     outline: 0;
     z-index: 1;
+    transition: background-color 0.3s;
 }
 
 .botaoCarrinho button:focus{
@@ -104,61 +104,25 @@
     padding: 2px;
 }
 
-.produto {
-    width: 47%;
-    height: 30%;
-    float: left;
-    overflow: hidden;
-    background: white;
-    padding: 1%;
-    margin: 0.5%;
-}
-
-.produto .img{
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 47%;
-    overflow: hidden;
-}
-
-.produto .marca-logo {
-    position: absolute;
-}
-
-.produto button {
+.botao {
+    box-shadow: 1px 1px 2px 0px #545454;
     border-radius: 4px;
-    background: linear-gradient(orange,#dc8800);
+    text-shadow: 1px 2px 3px #1d1d1d;
     color: white;
     border: 0;
     font-weight: bold;
-    width: 99%;
-    height: 30px;
+
+    &--laranja {
+        @extend .botao;
+        background: linear-gradient(#da5800, #f8aa32 67%);
+    }
+    &--vermelho {
+        @extend .botao;
+        background: linear-gradient(red, orangered 67%);
+    }
+    &--azul {
+        @extend .botao;
+        background: linear-gradient(#097bb9, #024f87 67%);
+    }
 }
 
-
-.produto .produto-footer {
-    height: 53%;
-}
-
-.produto .desc-container {
-    display: block;
-    max-lines: 2;
-}
-
-.produto label{
-    text-transform: capitalize;
-}
-
-.produto .valor{
-    text-align: right;
-    font-weight: bold;
-    display: block;
-    font-size: 1.3rem;
-}
-.produto .valor-antigo{
-    font-weight: bold;
-    text-decoration: line-through;
-    display: block;
-}

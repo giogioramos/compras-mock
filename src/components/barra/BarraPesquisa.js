@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class BarraPesquisa extends Component {
+class BarraPesquisa extends React.Component {
     render(){
         return (
             <header className="barraPesquisa">
