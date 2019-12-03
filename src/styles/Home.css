@@ -1,0 +1,100 @@
+.home {
+    background: linear-gradient(to right, #024f87, #097bb9 75%) no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.barraPesquisa {
+    position: fixed;
+    top: 0;
+    height: 55px;
+    padding: 5px 55px 5px 5px;
+    width: calc(100% - 60px);
+}
+
+.barraPesquisa img {    
+    z-index: 1;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 55px;
+}
+
+.barraPesquisa .input-borda {    
+    background: white;
+    position: relative;
+    top: 4px;
+    height: 35px;
+    width: 100%;
+    border: 6px solid #ff8626;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.barraPesquisa input {    
+    height: 100%;
+    width: 100%;
+    border: 0;
+    text-indent: 12px;
+    font-size: 1.3rem;
+    color: #3c3c3c;
+    padding: 0 30px 0 0;
+}
+
+.barraPesquisa input::placeholder {
+    color: #a0a0a0;
+}
+
+.listaProdutos{
+    position: absolute;
+    top: 56px;
+    overflow: auto;
+    height: calc(100% - 58px);
+    width: 100%;
+}
+
+.botaoCarrinho {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    height: 50px;
+    width: 50px;
+    transition: all 0.05s;
+}
+
+.botaoCarrinho button {
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 3px 8px 0px #3a3a3a;
+    background: url('../assets/img/cart.png') #f3f3f3 no-repeat 8px;
+    background-size: 30px;
+    border-radius: 50%;
+    border: 0;
+    outline: 0;
+    z-index: 1;
+}
+
+.botaoCarrinho button:focus{
+    outline: 0;
+    border-radius: 50%;
+}
+
+.botaoCarrinho button:active{
+    background-color:#ff8626;
+    transform: translateY(4px);
+}
+
+.botaoCarrinho span{
+    background: red;
+    color: white;
+    border-radius: 10px;
+    width: 24px;
+    height: 17px;
+    top: -6px;
+    right: -6px;
+    z-index: 2;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    padding: 2px;
+}
