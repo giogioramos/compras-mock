@@ -2,8 +2,7 @@ import React from 'react'
 import Produto from './Produto'
 import './Produto.scss'
 
-export default class ListaProdutos extends React.Component {
-   
+class ListaProdutos extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -65,3 +64,5 @@ export default class ListaProdutos extends React.Component {
         )
     }
 }
+
+export default ListaProdutos

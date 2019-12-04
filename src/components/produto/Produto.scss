@@ -64,11 +64,93 @@
 .produtoDetalhe {
     height: 350px;
     width: 100%;
+    position: relative;
+    font-family: sans-serif;
+
+    .det-logo {
+        width: 100px;
+        height: 60px;
+        background: 0 0 no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .det-img {
+        width: 100%;
+        height: 61%;
+        background: center center no-repeat;
+        background-size: contain;
+    }
+
+    .det-descricao {
+        font-weight: bolder;
+        font-size: 1.5rem;
+        margin-bottom: 5%;
+        color: #3f3f3f;
+    }
+
+    .det-valores {
+        margin-bottom: 5%;
+        width: 100%;
+        
+        .det-preco {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #3f3f3f;
+            overflow: hidden;
+            max-width: 42%;
+            float: left;
+            margin-top: 1%;
+            width: 45%;
+        }
+        
+        
+        button {
+            width: 45px;
+            height: 31px;
+            margin-left: 3%;
+            font-size: 1.3em;
+            float: right;
+        }
+
+        .separador {    
+            margin-top: 1%;
+            border: 0 !important;
+            width: 9%;
+            font-size: 1.3rem;
+            text-align: center;
+            font-weight: bold;
+            outline: 0;
+            float: left;
+        }
+
+        input {
+            border: 0 !important;
+            width: 12%;
+            font-size: 1.3rem;
+            text-align: center;
+            font-weight: bold;
+            outline: 0;
+            margin-top: 0.5%;
+        } 
+        input:focus {
+            outline: 0;
+        }
+    }
+
+    .det-total {
+        font-weight: bold;
+        font-size: 2em;
+        text-align: right;
+        display: block;
+        color: green;
+    }
 
     .detalhe-footer {
-        height: 100px;
+        height: 11%;
         width: 100%;
-        background:red;
 
         button {
             width: 50%;

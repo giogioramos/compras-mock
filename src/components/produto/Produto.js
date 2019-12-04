@@ -1,17 +1,11 @@
 import React from 'react'
 import './Produto.scss'
+import Modal from '../modal/Modal'
 import formatarReal from '../../util/currency'
+import funcs from '../../store/actions'
+import {connect} from 'react-redux'
 
-export default class Produto extends React.Component {
-    constructor(props){
-        super(props)
-        this.sayHello = this.sayHello.bind(this);
-    }
-
-    sayHello(){
-        console.log('AHHHHHHHHHHHHH!')
-    }
-
+class Produto extends React.Component {
     render(){
         const styles = [
             {backgroundImage: "url("+require("../../assets/mock/"+this.props.marca_img)+")"},
@@ -27,9 +21,11 @@ export default class Produto extends React.Component {
                         <label className="nome">{this.props.nome}</label>
                     </div>
                     <label className="valor">{formatarReal(this.props.valor)}</label>
-                    <button onClick={this.sayHello()} className="botao--laranja">COMPRAR</button>
+                    <button onClick={() => this.props.dispatch(funcs.verProduto(this.props))} className="botao--laranja">COMPRAR</button>
                 </div>
             </div>
         )
     }
 }
+
+export default connect()(Produto) 
