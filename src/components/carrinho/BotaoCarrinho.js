@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function BotaoCarrinho() {
+export default function BotaoCarrinho(props) {
     return (
         <div className="botaoCarrinho">
-            <span>99</span>
+            {props.cont>0?<span>{props.cont}</span>:null}
             <button></button>
         </div>
     )

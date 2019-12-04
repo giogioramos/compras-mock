@@ -55,7 +55,7 @@ class ListaProdutos extends React.Component {
                             <Produto 
                                 key={produto.id} nome={produto.nome} img={produto.img}
                                 marca_nome={produto.marca_nome} marca_img={produto.marca_img} 
-                                valor={produto.valor}
+                                valor={produto.valor} quantidade={1}
                             />
                         )
                     })

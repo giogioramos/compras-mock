@@ -1,8 +1,7 @@
 import React from 'react'
 import './Produto.scss'
-import Modal from '../modal/Modal'
 import formatarReal from '../../util/currency'
-import funcs from '../../store/actions'
+import Actions from '../../store/actions'
 import {connect} from 'react-redux'
 
 class Produto extends React.Component {
@@ -21,7 +20,8 @@ class Produto extends React.Component {
                         <label className="nome">{this.props.nome}</label>
                     </div>
                     <label className="valor">{formatarReal(this.props.valor)}</label>
-                    <button onClick={() => this.props.dispatch(funcs.verProduto(this.props))} className="botao--laranja">COMPRAR</button>
+                    <button onClick={() => Actions.visualizarProduto(this.props)} className="botao--laranja">COMPRAR</button>
+                    {/* <button onClick={() => Actions.teste} className="botao--laranja">COMPRAR</button> */}
                 </div>
             </div>
         )

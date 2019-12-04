@@ -63,6 +63,7 @@
 
 .produtoDetalhe {
     height: 350px;
+    min-height: 400px;
     width: 100%;
     position: relative;
     font-family: sans-serif;
@@ -115,6 +116,13 @@
             float: right;
         }
 
+        button:active{
+            transform: scale(0.9);
+        }
+        button:disabled{
+            background: gray;
+        }
+
         .separador {    
             margin-top: 1%;
             border: 0 !important;
@@ -146,6 +154,7 @@
         text-align: right;
         display: block;
         color: green;
+        margin-bottom: 3%;
     }
 
     .detalhe-footer {
@@ -153,10 +162,11 @@
         width: 100%;
 
         button {
-            width: 50%;
+            width: 48%;
             float: left;
             height: 100%;
             font-size: 1rem;
+            margin: 1%;
         }
     }
 }

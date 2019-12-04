@@ -1,7 +1,6 @@
 import React from 'react'
 import './Modal.scss';
 import { connect } from 'react-redux';
-import funcs from '../../store/actions'
 
 class Modal extends React.Component {
     render() {
@@ -11,7 +10,7 @@ class Modal extends React.Component {
                 <div className="modal-pai">
                     <div className="cabecalho">
                         <div className="titulo">{this.props.titulo}</div>
-                        <button onClick={() => this.props.dispatch(funcs.verProduto(null, true))}>X</button>
+                        <button onClick={this.props.acaoFechar}>X</button>
                     </div>
                     <div className="conteudo">
                         {this.props.conteudo}
