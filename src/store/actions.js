@@ -28,6 +28,19 @@ const Actions = {
             val
         })
     },
+    alterarQtdProdutoCarrinho(produto, val){
+        store.dispatch({
+            type: 'ALT_QTD_PRODUTO_CARRINHO',
+            produto,
+            val
+        })
+    },
+    buscarProduto(busca){
+        store.dispatch({
+            type: 'BUSCAR',
+            busca
+        })
+    },
     conteudoModal(conteudo_modal){
         store.dispatch({
             type: 'ALT_CONTEUDO_MODAL',

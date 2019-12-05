@@ -2,6 +2,7 @@ import React from 'react'
 import Produto from './Produto'
 import './Produto.scss'
 import '../../estilos/style.scss'
+import { connect } from 'react-redux'
 
 class ListaProdutos extends React.Component {
     constructor(props){
@@ -53,11 +54,14 @@ class ListaProdutos extends React.Component {
                 {produtos.map(
                     produto => {
                         return (
-                            <Produto 
-                                key={produto.id} nome={produto.nome} img={produto.img}
-                                marca_nome={produto.marca_nome} marca_img={produto.marca_img} 
-                                valor={produto.valor} quantidade={1}
-                            />
+                            <>
+                                {produto.nome.toUpperCase().includes(this.props.busca)?
+                                    <Produto 
+                                        key={produto.id} nome={produto.nome} img={produto.img}
+                                        marca_nome={produto.marca_nome} marca_img={produto.marca_img} 
+                                        valor={produto.valor} quantidade={1}/>
+                                :null}
+                            </>
                         )
                     })
                 }
@@ -66,4 +70,4 @@ class ListaProdutos extends React.Component {
     }
 }
 
-export default ListaProdutos
+export default connect(state => ({busca: state.util.busca}))(ListaProdutos)

@@ -4,18 +4,11 @@ const ESTADO_INICIAL = {
         titulo: null,
         grande: null,
         btnVoltar: null
-    }
+    },
+    busca: ""
 } 
 
 function util(state = ESTADO_INICIAL, action){
-    if (action.type === "FECHAR_MODAL") {
-        return {
-            ...state,
-            conteudo_modal : {
-                conteudo: null
-            }
-        }
-    }
     if (action.conteudo_modal !== undefined) {
         return {
             ...state,
@@ -27,8 +20,23 @@ function util(state = ESTADO_INICIAL, action){
             }
         }
     }
-        
-    return state 
+
+    switch (action.type) {
+        case "FECHAR_MODAL":
+            return {
+                ...state,
+                conteudo_modal : {
+                    conteudo: null
+                }
+            }
+        case "BUSCAR":
+            return {
+                ...state,
+                busca: action.busca
+            }
+        default:
+            return state
+    }
 }
 
 export default util

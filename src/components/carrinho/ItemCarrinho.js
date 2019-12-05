@@ -2,7 +2,7 @@ import React from 'react'
 import './carrinho.scss'
 import '../../pages/Carrinho/Carrinho.scss'
 import '../../estilos/style.scss'
-
+import Actions from '../../store/actions'
 import formatarReal from '../../util/currency'
 
 export default class ItemCarrinho extends React.Component {
@@ -11,13 +11,19 @@ export default class ItemCarrinho extends React.Component {
         return (
             <div className="itemCarrinho">
                 <hr />     
-                <div className="descricao">{this.props.produto.nome}</div>
-                <hr />            
                 <div style={style} className="image" />
+                <div className="descricao">{this.props.produto.nome}</div>
+                {/* <hr />             */}
                 <div className="valor">{formatarReal(this.props.produto.valor)}</div>
-                <button className="botao-azul">+</button>
-                <input value={this.props.produto.quantidade} type="number"/>
-                <button className="botao-laranja">-</button>
+                <button 
+                    onClick={() => Actions.alterarQtdProdutoCarrinho(this.props.produto, -1)}
+                    className="botao-laranja">-
+                </button>
+                <input readOnly value={this.props.produto.quantidade} type="number"/>
+                <button 
+                    onClick={() => Actions.alterarQtdProdutoCarrinho(this.props.produto, 1)}
+                    className="botao-azul">+
+                </button>
                 {/* <div className="total-caption">Total</div> */}
                 {/* <div className="total">{formatarReal(this.props.produto.valor)}</div> */}
             </div>
