@@ -5,7 +5,8 @@ const ESTADO_INICIAL = {
         grande: null,
         btnVoltar: null
     },
-    busca: ""
+    busca: "",
+    produtos: []
 } 
 
 function util(state = ESTADO_INICIAL, action){
@@ -33,6 +34,11 @@ function util(state = ESTADO_INICIAL, action){
             return {
                 ...state,
                 busca: action.busca
+            }
+        case "CARREGAR_PRODUTOS":
+            return { 
+                ...state,
+                produtos: state.produtos.concat(action.produtos)
             }
         default:
             return state

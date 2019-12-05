@@ -10,6 +10,7 @@ class Produto extends React.Component {
             {backgroundImage: "url("+require("../../assets/mock/"+this.props.marca_img)+")"},
             {backgroundImage: "url("+require("../../assets/mock/"+this.props.img)+")"}
         ]
+        console.log(this.props.key)
         return (
             <div className="produto">
                 <label className="marca-logo" style={styles[0]}></label>

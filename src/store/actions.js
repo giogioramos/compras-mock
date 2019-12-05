@@ -51,6 +51,12 @@ const Actions = {
         store.dispatch({
             type: 'FECHAR_MODAL'
         })
+    },
+    carregarProdutos(produtos){
+        store.dispatch({
+            type: 'CARREGAR_PRODUTOS',
+            produtos
+        })
     }
 }
 
