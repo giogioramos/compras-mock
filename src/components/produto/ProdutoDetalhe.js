@@ -13,7 +13,6 @@ class ProdutoDetalhe extends React.Component {
     }
 
     render(){
-        console.log(this.props.atual.nome)
         const styles = [
             {backgroundImage: "url("+require("../../assets/mock/"+this.props.produto.marca_img)+")"},
             {backgroundImage: "url("+require("../../assets/mock/"+this.props.produto.img)+")"}
@@ -28,18 +27,18 @@ class ProdutoDetalhe extends React.Component {
                     <div className="det-preco">{formatarReal(this.props.produto.valor)}</div>
                     <div className="separador">x</div>
                     <input type="number" value={this.props.produto.quantidade} readOnly />
-                    <button disabled={this.props.produto.quantidade===1} onClick={() => this.props.dispatch(Actions.alterarQtdProdutoAtual(-1))} className="botao--laranja">-</button>
-                    <button onClick={() => this.props.dispatch(Actions.alterarQtdProdutoAtual(1))} className="botao--azul">+</button>
+                    <button disabled={this.props.produto.quantidade===1} onClick={() => Actions.alterarQtdProdutoAtual(-1)} className="botao-laranja">-</button>
+                    <button onClick={() => Actions.alterarQtdProdutoAtual(1)} className="botao-azul">+</button>
                 </div>
                 <div className="det-total">{formatarReal(this.state.total * this.props.produto.quantidade)}</div>
                 <hr />
                 <div className="detalhe-footer">
-                    <button onClick={() => this.props.dispatch(Actions.visualizarProduto({}))} className="botao--vermelho">Voltar</button>
-                    <button onClick={() => this.props.dispatch(Actions.addCarrinho(this.props.produto))} className="botao--azul">Adicionar</button>
+                    <button onClick={() => Actions.visualizarProduto({})} className="botao-vermelho">Voltar</button>
+                    <button onClick={() => Actions.addCarrinho(this.props.produto)} className="botao-azul">Adicionar</button>
                 </div>
             </div>
         )
     }
 }
 
-export default connect(state => ({carrinho : state.carrinho.carrinho, atual : state.carrinho.produto_atual}))(ProdutoDetalhe)
+export default connect(state => ({produto : state.carrinho.produto_atual}))(ProdutoDetalhe)

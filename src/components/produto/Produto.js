@@ -20,8 +20,7 @@ class Produto extends React.Component {
                         <label className="nome">{this.props.nome}</label>
                     </div>
                     <label className="valor">{formatarReal(this.props.valor)}</label>
-                    <button onClick={() => Actions.visualizarProduto(this.props)} className="botao--laranja">COMPRAR</button>
-                    {/* <button onClick={() => Actions.teste} className="botao--laranja">COMPRAR</button> */}
+                    <button onClick={() => Actions.visualizarProduto(this.props)} className="botao-laranja">COMPRAR</button>
                 </div>
             </div>
         )

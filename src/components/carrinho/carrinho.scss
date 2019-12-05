@@ -1,0 +1,48 @@
+.itemCarrinho{
+    padding: 7px 7px 0 7px;
+
+    .image {
+        background-size: contain;
+        height: 130px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .descricao {
+        font-size: 1.3rem;
+    }
+    .valor {
+        font-size: 1.4rem;
+        margin-bottom: 6%;
+        float: left;
+    }
+    input {
+        float: right;
+        font-weight: bold;
+        font-size: 1.2rem;
+        width: 15%;
+        border: 0;
+        border-bottom: 1px solid gray;
+        text-align: center;
+        margin: 0 7px 0 8px;
+    }
+    button {
+        width: 35px;
+        height: 25px;
+        float: right;
+    }
+    .total-caption{
+        font-size: 1.2em;
+        color: #505050;
+        font-weight: normal;    
+        text-align: right;
+        clear: both;
+    }
+    .total {
+        text-align: right;
+        clear: both;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #52c200;
+    }
+}

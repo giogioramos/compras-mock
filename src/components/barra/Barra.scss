@@ -1,0 +1,45 @@
+
+.barraInferior {
+    height: 50px;
+    background: wheat;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    
+    .btn-carrinho {
+        width: 15%;
+        height: 100%;
+        float: left;
+        background: url(../../assets/img/cart.png) center center no-repeat #e3e3e3;
+        background-size: 55%;
+        position: relative;
+        
+        span{
+            background: red;
+            color: white;
+            border-radius: 10px;
+            width: auto;
+            height: 17px;
+            top: -6px;
+            right: -6px;
+            z-index: 2;
+            position: absolute;
+            text-align: center;
+            font-weight: bold;
+            padding: 2px;
+            min-width: 20px;
+        }
+    }
+    .btn-finalizar {
+        width: 85%;
+        height: 100%;
+        font-size: 1.3rem;
+    }
+    button {
+        border-radius: 0 !important;
+    }
+    button:focus {
+        outline: 0;
+    }
+}

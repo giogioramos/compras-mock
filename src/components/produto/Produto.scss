@@ -171,3 +171,12 @@
     }
 }
 
+.listaProdutos{
+    position: absolute;
+    top: 60px;
+    overflow: auto;
+    height: calc(100% - 60px);
+    width: 100%;
+}
+
+

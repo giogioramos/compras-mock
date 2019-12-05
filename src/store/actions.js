@@ -8,8 +8,10 @@ const Actions = {
             type: 'COMPRAR_PRODUTO',
             produto_atual,
             conteudo_modal : {
-                conteudo: <ProdutoDetalhe produto={produto_atual}/>,
-                titulo: "Adicionar ao carrinho"
+                conteudo: produto_atual.nome !== undefined?<ProdutoDetalhe produto={produto_atual}/>: null,
+                titulo: "Adicionar ao carrinho",
+                grande: false,
+                btnVoltar: false
             }
         })
     },
@@ -18,18 +20,24 @@ const Actions = {
             type: 'ADD_CARRINHO',
             produto
         })
+        this.fecharModal()
     },
     alterarQtdProdutoAtual(val){
-        return {
+        store.dispatch({
             type: 'ALT_QTD_PRODUTO_ATUAL',
             val
-        }
+        })
     },
-    conteudoModal(conteudo){
-        return {
+    conteudoModal(conteudo_modal){
+        store.dispatch({
             type: 'ALT_CONTEUDO_MODAL',
-            conteudo
-        }
+            conteudo_modal
+        })
+    },
+    fecharModal(){
+        store.dispatch({
+            type: 'FECHAR_MODAL'
+        })
     }
 }
 

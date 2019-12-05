@@ -25,7 +25,7 @@
         overflow: hidden;
     
         .cabecalho{
-            height: 45px;
+            height: 7vh;
             width: 100%;
             background: linear-gradient(#da5800, #f8aa32 67%);
             position: relative;
@@ -60,7 +60,18 @@
         }
         .conteudo {
             padding: 3%;
-            overflow: auto;
+            overflow: auto;   
+            height: 85%;
         }
+    }
+
+    .btnVoltar {
+        margin-left: 5%;
+        border-radius: 0;
+        z-index: 1;
+        position: relative;
+        width: 90%;
+        height: 38px;
+        font-size: 1rem;
     }
 }

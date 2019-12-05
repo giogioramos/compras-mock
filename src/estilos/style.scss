@@ -1,0 +1,30 @@
+.botao {
+    box-shadow: 1px 1px 2px 0px #545454;
+    border-radius: 4px;
+    text-shadow: 1px 2px 3px #1d1d1d;
+    color: white;
+    border: 0;
+    font-weight: bold;
+
+    &-laranja {
+        @extend .botao;
+        background: linear-gradient(#da5800, #f8aa32 67%);
+    }
+    &-vermelho {
+        @extend .botao;
+        background: linear-gradient(red, orangered 67%);
+    }
+    &-azul {
+        @extend .botao;
+        background: linear-gradient(#097bb9, #024f87 67%);
+    }
+    &-verde {
+        @extend .botao;
+        background: linear-gradient(#00d137, #12b700 67%);
+    }
+    &-quadrado {
+        @extend .botao;
+        border-radius:0;
+    }
+    
+}

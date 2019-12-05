@@ -1,6 +1,7 @@
 import React from 'react'
 import Produto from './Produto'
 import './Produto.scss'
+import '../../estilos/style.scss'
 
 class ListaProdutos extends React.Component {
     constructor(props){
@@ -45,10 +46,10 @@ class ListaProdutos extends React.Component {
     }
 
     render(){
+        const style = this.props.reduzir?{height:"calc(100% - 110px)"}:{height:"calc(100% - 60px)"}
         const {produtos} = this.state
         return (
-            <div className="listaProdutos">
-                <div className="quebra"></div>
+            <div style={style} className="listaProdutos">
                 {produtos.map(
                     produto => {
                         return (
