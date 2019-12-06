@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import {withRouter} from 'react-router-dom'
 
 import './Home.scss'
 import BarraPesquisa from '../../components/barra/BarraPesquisa'
@@ -21,7 +22,12 @@ class Home extends React.Component{
                 <BarraPesquisa />   
                 <ListaProdutos reduzir={this.props.quantidade_produto > 0}/> 
                 {this.props.quantidade_produto > 0 ?
-                <BarraInferior />:null}
+                <BarraInferior
+                    titulo = "Finalizar Compra"
+                    acao = {() => {this.props.history.push('/carrinho')}}
+                    carrinho={true} 
+                />
+                :null}
             </div>
         )
     }
@@ -33,4 +39,4 @@ export default connect(
         conteudo_modal: state.util.conteudo_modal,
         quantidade_produto: state.carrinho.quantidade_produto
     })
-)(Home)
+)(withRouter(Home))

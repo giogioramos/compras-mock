@@ -1,10 +1,13 @@
 .itemCarrinho{
     padding: 7px 7px 0 7px;
+    width: 96%;
+    // float: left;
+    // border:1px solid #cecece;
 
     hr {
         clear: both
     }
-
+    
     .image {
         background: center center no-repeat;
         background-size: contain;
@@ -16,6 +19,10 @@
     .descricao {
         font-size: 1.3rem;
         margin-bottom: 25px;
+        color: #3f3f3f;
+        height: 3rem;
+        overflow: hidden;
+        text-align: left;
     }
     .valor {
         font-size: 1.4rem;

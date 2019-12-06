@@ -1,19 +1,17 @@
-
 .barraInferior {
     height: 50px;
-    background: wheat;
     width: 100%;
     position: fixed;
     bottom: 0;
 
-    
     .btn-carrinho {
         width: 15%;
         height: 100%;
-        float: left;
+        left: 0;
         background: url(../../assets/img/cart.png) center center no-repeat #e3e3e3;
-        background-size: 55%;
-        position: relative;
+        background-size: 32px;
+        position: absolute;
+        z-index: 2;
         
         span{
             background: red;
@@ -32,14 +30,59 @@
         }
     }
     .btn-finalizar {
-        width: 85%;
+        width: 100%;
         height: 100%;
         font-size: 1.3rem;
+        z-index: 1;
+        left: 0;
+        position: absolute;
     }
     button {
         border-radius: 0 !important;
     }
     button:focus {
         outline: 0;
+    }
+}
+
+
+.barraPesquisa {
+    position: fixed;
+    top: 0;
+    height: 55px;
+    padding: 5px 55px 5px 5px;
+    width: calc(100% - 60px);
+
+    img {    
+        z-index: 1;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 55px;
+    }
+
+    .input-borda {    
+        background: white;
+        position: relative;
+        top: 4px;
+        height: 35px;
+        width: 100%;
+        border: orange solid 6px;
+        border-radius: 13px;
+        overflow: hidden;
+    }
+
+    input {    
+        height: 100%;
+        width: 100%;
+        border: 0;
+        text-indent: 12px;
+        font-size: 1.3rem;
+        color: #3c3c3c;
+        padding: 0 30px 0 0;
+    }
+    
+    input::placeholder {
+        color: #a0a0a0;
     }
 }

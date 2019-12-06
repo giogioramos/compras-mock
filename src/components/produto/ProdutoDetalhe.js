@@ -21,6 +21,7 @@ class ProdutoDetalhe extends React.Component {
             <div className="produtoDetalhe">
                 <div style={styles[0]} className="det-logo"/>
                 <div style={styles[1]} className="det-img"/>
+               
                 <div className="det-descricao">{this.props.produto.nome}</div>
                 <hr />
                 <div className="det-valores">

@@ -35,6 +35,22 @@ const Actions = {
             val
         })
     },
+    deletarProduto(produto){
+        store.dispatch({
+            type: 'DELETAR_PRODUTO',
+            produto
+        })
+    },
+    limparCarrinho(){
+        store.dispatch({
+            type: 'LIMPAR_CARRINHO'
+        })
+    },
+    limparProdutos(){
+        store.dispatch({
+            type: 'LIMPAR_PRODUTOS'
+        })
+    },
     buscarProduto(busca){
         store.dispatch({
             type: 'BUSCAR',

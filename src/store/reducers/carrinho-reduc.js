@@ -49,6 +49,20 @@ function carrinho(state = ESTADO_INICIAL, action){
                 quantidade: res_atual
                 }
             }
+
+        case "DELETAR_PRODUTO":
+                const index_del = state.carrinho.findIndex(elem => elem.nome === action.produto.nome)
+                return {
+                    ...state,
+                    carrinho : [
+                        ...state.carrinho.slice(0, index_del), 
+                        ...state.carrinho.slice(index_del + 1)
+                    ],
+                    quantidade_produto: state.quantidade_produto - action.produto.quantidade,
+                    total: state.total - (action.produto.valor * action.produto.quantidade)
+                }
+        case "LIMPAR_CARRINHO":
+            return ESTADO_INICIAL
         case "ALT_QTD_PRODUTO_CARRINHO":
             const index_carrinho = state.carrinho.findIndex(elem => elem.nome === action.produto.nome)
 

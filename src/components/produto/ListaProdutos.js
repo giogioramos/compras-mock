@@ -6,73 +6,53 @@ import { connect } from 'react-redux'
 import Actions from '../../store/actions'
 
 class ListaProdutos extends React.Component {
-    // constructor(props){
-    //     super(props)
-    //     this.state = {
-    //         produtos: []
-    //     }
-    // }
-
     componentDidMount(){
         this.fetchData();
     }
-
+    
     fetchData(){
         const URL_BASE = 'http://localhost:3000/'
-        fetch(URL_BASE + 'marca')
-        .then(resposta => resposta.json())
-        .then(marcas => {
-            marcas.map( marca => {
-                fetch(URL_BASE + 'marca/'+marca.id+'/produto')
-                .then(resposta => resposta.json())
-                .then((produtos) => 
-                    produtos.map(produto => {
-                        return {
-                            "id": produto.id,
-                            "nome": produto.nome,
-                            "valor": produto.valor,
-                            "img": produto.img,
-                            "marca_nome": marca.nome,
-                            "marca_id": marca.id,
-                            "marca_img": marca.img
-                        }
-                    })
-                )
-                .then(produtos => 
-                    Actions.carregarProdutos(produtos)
-                )
+        fetch(URL_BASE+'marca/?_embed=produto')
+        .then((res) => res.json())
+        .then((marcas) => {
+            let array = []
+            marcas.map((marca) => 
+            array = array.concat(marca.produto.map((produto) => {
+                return {
+                    "id": produto.id,
+                    "nome": produto.nome,
+                    "valor": produto.valor,
+                    "img": produto.img,
+                    "marca_nome": marca.nome,
+                    "marca_id": marca.id,
+                    "marca_img": marca.img
+                }
             })
+            ))
+            Actions.limparProdutos()
+            Actions.carregarProdutos(array)
         })
-        .catch(erros => console.log(erros))
     }
-    textoDestacado(texto, destaque) {
-        var partes = texto.split(new RegExp(`(${destaque})`, 'gi'));
-        return <>{partes.map(parte => parte.toLowerCase() === destaque.toLowerCase() ? <mark>{parte}</mark> : parte)}</>;
-    }
+    
     render(){
-        const style = this.props.reduzir?{height:"calc(100% - 110px)"}:{height:"calc(100% - 60px)"}
-        // const {produtos} = this.state
+        const tamanho = this.props.reduzir?"110":"60"
         return (
-            <div style={style} className="listaProdutos">
+            <section style={{height: "calc(100% - "+tamanho+"px)"}} className="listaProdutos">
                 {this.props.produtos.map(
-                    produto => {
-                        return (
-                            <>
-                            {produto.nome.toUpperCase().includes(this.props.busca.toUpperCase())?
-                                <Produto 
-                                    key={produto.id} 
-                                    nome={this.textoDestacado(produto.nome,this.props.busca)} 
+                        produto => {
+                            let visible = produto.nome.toUpperCase().includes(this.props.busca.toUpperCase())?'block':'none'
+                            return (
+                            <Produto style={visible} key={produto.id} 
+                                    nome = {produto.nome}
+                                    destaque = {this.props.busca}
                                     img={produto.img} 
                                     marca_nome={produto.marca_nome} 
                                     marca_img={produto.marca_img} 
                                     valor={produto.valor} 
-                                    quantidade={1}/>
-                            :null}
-                            </>
-                        )
-                    })
-                }
-            </div>
+                                    quantidade={1}/>)
+                        }
+                )}
+            </section>
         )
     }
 }

@@ -4,44 +4,4 @@
     width: 100%;
 }
 
-.barraPesquisa {
-    position: fixed;
-    top: 0;
-    height: 55px;
-    padding: 5px 55px 5px 5px;
-    width: calc(100% - 60px);
-}
-
-.barraPesquisa img {    
-    z-index: 1;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    height: 55px;
-}
-
-.barraPesquisa .input-borda {    
-    background: white;
-    position: relative;
-    top: 4px;
-    height: 35px;
-    width: 100%;
-    border: 6px solid #ff8626;
-    border-radius: 13px;
-    overflow: hidden;
-}
-
-.barraPesquisa input {    
-    height: 100%;
-    width: 100%;
-    border: 0;
-    text-indent: 12px;
-    font-size: 1.3rem;
-    color: #3c3c3c;
-    padding: 0 30px 0 0;
-}
-
-.barraPesquisa input::placeholder {
-    color: #a0a0a0;
-}
 

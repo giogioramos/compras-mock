@@ -40,6 +40,11 @@ function util(state = ESTADO_INICIAL, action){
                 ...state,
                 produtos: state.produtos.concat(action.produtos)
             }
+        case "LIMPAR_PRODUTOS":
+                return { 
+                    ...state,
+                    produtos: []
+                }
         default:
             return state
     }

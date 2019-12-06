@@ -8,7 +8,7 @@ class BarraPesquisa extends React.Component {
                 <div className="input-borda">
                     <input onChange={(event) => Actions.buscarProduto(event.target.value)} placeholder="Busque um Produto..." type="search"/>
                 </div>
-                {/* <img alt="" src={require('../../assets/img/kabumarrow.png')} /> */}
+                <img alt="" src={require('../../assets/img/kabumarrow.png')} />
             </header>
         )
     }    
